@@ -1,1 +1,1 @@
-# My solution to interesting task
+# Task and my solution
