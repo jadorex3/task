@@ -67,3 +67,36 @@ Explanation
     this way till the end gives us the resulting string.
 """
 
+# !/bin/python3
+import os
+
+
+def morgan(a, b):
+    a += 'z'
+    b += 'z'
+
+    for _ in range(len(a) + len(b) - 2):
+        if a < b:
+            yield a[0]
+            a = a[1:]
+        else:
+            yield b[0]
+            b = b[1:]
+
+
+def morganAndString(a, b):
+    return ''.join(morgan(a, b))
+
+
+if __name__ == '__main__':
+    result =''
+    t = int(input())        # Number of line pairs
+
+    for t_itr in range(t):  # Reading pairs of lines
+        a = input()
+
+        b = input()
+
+        result += f'{morganAndString(a, b)}\n'
+    print(result)
+
